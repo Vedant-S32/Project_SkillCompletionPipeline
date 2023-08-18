@@ -1,0 +1,305 @@
+[gd_scene load_steps=19 format=3 uid="uid://cs0dcfh8m2gyr"]
+
+[ext_resource type="Script" path="res://scene/main.gd" id="1_87yao"]
+[ext_resource type="PackedScene" uid="uid://ct17ppj7yijv1" path="res://scene/search_result.tscn" id="2_a0e80"]
+[ext_resource type="Script" path="res://script/API_YTFetch.gd" id="3_7tsj7"]
+[ext_resource type="Texture2D" uid="uid://df14hdyqi1xst" path="res://resources/ReloadButton.png" id="4_ei70j"]
+[ext_resource type="PackedScene" uid="uid://o7ncg7pgbx1q" path="res://scene/PopupMenu.tscn" id="4_s86g1"]
+[ext_resource type="PackedScene" uid="uid://t0k7pwxnla0o" path="res://scene/course_level.tscn" id="5_826dy"]
+[ext_resource type="Texture2D" uid="uid://fi8lda7asjou" path="res://resources/HomeButton.png" id="5_c5cpp"]
+[ext_resource type="PackedScene" uid="uid://bu3irca2cpe8p" path="res://scene/subject_popup.tscn" id="6_42wh1"]
+[ext_resource type="PackedScene" uid="uid://c3wphqyuqkgco" path="res://scene/VideoPopup.tscn" id="7_rytdm"]
+
+[sub_resource type="Theme" id="Theme_vtgtg"]
+
+[sub_resource type="Theme" id="Theme_sv3gr"]
+/colors/new = Color(0.282353, 0.72549, 0.756863, 1)
+
+[sub_resource type="Gradient" id="Gradient_wiegd"]
+offsets = PackedFloat32Array(0.07173)
+colors = PackedColorArray(0.934742, 0.495093, 0.523516, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wowy4"]
+gradient = SubResource("Gradient_wiegd")
+
+[sub_resource type="Theme" id="Theme_pp50i"]
+
+[sub_resource type="Animation" id="Animation_u20rh"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SidePanel:size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SidePanel:size:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(130, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_jyfdd"]
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SidePanel:size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(38, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SidePanel:size:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(130, -0.25, 0, 0.25, 0, 130, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_w5tma"]
+resource_name = "SideMenu"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SidePanel:size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0, 38, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SidePanel:size:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(130, -0.25, 0, 0.25, 0, 130, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jgl4r"]
+_data = {
+"RESET": SubResource("Animation_u20rh"),
+"SideMenuCollapse": SubResource("Animation_jyfdd"),
+"SideMenuOpen": SubResource("Animation_w5tma")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87yao")
+
+[node name="Background" type="ColorRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vtgtg")
+color = Color(0.203922, 0.305882, 0.380392, 1)
+
+[node name="SearchResult" parent="." instance=ExtResource("2_a0e80")]
+layout_mode = 1
+anchor_left = 0.035
+anchor_top = 0.105
+offset_left = -0.32
+offset_top = -4.04
+
+[node name="res_ItemList" parent="SearchResult" index="0"]
+anchor_left = -0.036
+anchor_top = -0.014
+offset_left = 40.032
+offset_top = 8.176
+max_columns = 4
+same_column_width = true
+fixed_icon_size = Vector2i(240, 135)
+script = ExtResource("3_7tsj7")
+
+[node name="Panel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.099
+offset_bottom = -0.152
+theme = SubResource("Theme_sv3gr")
+texture = SubResource("GradientTexture1D_wowy4")
+
+[node name="SearchBox" type="LineEdit" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.337
+anchor_top = 0.274
+anchor_right = 0.663
+anchor_bottom = 0.726
+offset_left = -0.192017
+offset_top = -0.0280018
+offset_right = 0.191956
+offset_bottom = 0.0279999
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Type to search"
+
+[node name="SearchButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.604
+anchor_top = 0.25
+anchor_right = 0.663
+anchor_bottom = 0.74
+offset_left = 0.191956
+offset_right = -2.77606
+offset_bottom = -0.360001
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05389, 1.01219)
+text = "Search"
+
+[node name="RefreshButton" type="Button" parent="Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111
+anchor_right = 0.167
+anchor_bottom = 1.0
+offset_left = 0.127991
+offset_right = -0.384018
+icon = ExtResource("4_ei70j")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="HomeButton" type="Button" parent="Panel"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035
+anchor_right = 0.09
+anchor_bottom = 1.0
+offset_left = -0.32
+offset_right = 0.319992
+icon = ExtResource("5_c5cpp")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="SidePanel" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 1.0
+offset_right = -32.32
+offset_bottom = -518.0
+scale = Vector2(5, 5)
+color = Color(0.298039, 0.235294, 0.262745, 1)
+
+[node name="Button_SideMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.048
+offset_right = 40.0
+offset_bottom = -0.104
+theme = SubResource("Theme_pp50i")
+text = "+++"
+
+[node name="MenuAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jgl4r")
+}
+
+[node name="Swt_Addlink" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.889
+anchor_top = 0.79
+anchor_right = 0.943
+anchor_bottom = 0.887
+offset_left = -0.128052
+offset_top = 0.0799866
+offset_right = -37.3361
+offset_bottom = -31.776
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.51275, 2.10669)
+text = "+"
+
+[node name="SubjectPopup" parent="." instance=ExtResource("6_42wh1")]
+visible = false
+layout_mode = 1
+
+[node name="SubjectEntry" parent="SubjectPopup" index="2"]
+text = "blender"
+
+[node name="PopupMenu" parent="." instance=ExtResource("4_s86g1")]
+visible = false
+layout_mode = 1
+
+[node name="LevelContainer" parent="PopupMenu" index="4"]
+visible = false
+
+[node name="SubjectLevel" parent="." instance=ExtResource("5_826dy")]
+visible = false
+layout_mode = 1
+
+[node name="ResultPopup" parent="." instance=ExtResource("7_rytdm")]
+visible = false
+layout_mode = 1
+
+[connection signal="item_selected" from="SearchResult/res_ItemList" to="." method="_on_res_item_list_item_selected"]
+[connection signal="text_submitted" from="Panel/SearchBox" to="." method="_on_search_box_text_submitted"]
+[connection signal="button_up" from="Panel/SearchButton" to="." method="_on_search_button_button_up"]
+[connection signal="button_up" from="Panel/RefreshButton" to="." method="_on_home_button_button_up"]
+[connection signal="button_up" from="Panel/RefreshButton" to="." method="_on_refresh_button_button_up"]
+[connection signal="button_up" from="Panel/HomeButton" to="." method="_on_home_button_button_up"]
+[connection signal="pressed" from="Button_SideMenu" to="." method="_on_button_side_menu_pressed"]
+[connection signal="pressed" from="Swt_Addlink" to="." method="_on_swt_addlink_pressed"]
+[connection signal="pressed" from="SubjectPopup/SubjectExit" to="." method="_on_subject_exit_pressed"]
+[connection signal="text_submitted" from="SubjectPopup/SubjectEntry" to="." method="_on_subject_entry_text_submitted"]
+[connection signal="button_up" from="SubjectPopup/B_Next" to="." method="_on_b_next_button_up"]
+[connection signal="pressed" from="PopupMenu/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="text_submitted" from="PopupMenu/UploadLink" to="." method="_on_upload_link_text_submitted"]
+[connection signal="pressed" from="PopupMenu/LevelContainer/B_Advanced" to="." method="_on_b_advanced_pressed"]
+[connection signal="pressed" from="PopupMenu/LevelContainer/B_Beginner" to="." method="_on_b_beginner_pressed"]
+[connection signal="pressed" from="PopupMenu/LevelContainer/B_Intermediate" to="." method="_on_b_intermediate_pressed"]
+[connection signal="item_selected" from="PopupMenu/CommitPosition/CommitPositionList" to="." method="_on_commit_position_list_item_selected"]
+[connection signal="button_up" from="SubjectLevel/Panel/B2_Advanced" to="." method="_on_b_2_advanced_button_up"]
+[connection signal="button_up" from="SubjectLevel/Panel/B2_Intermediate" to="." method="_on_b_2_intermediate_button_up"]
+[connection signal="button_up" from="SubjectLevel/Panel/B2_Beginner" to="." method="_on_b_2_beginner_button_up"]
+[connection signal="button_up" from="ResultPopup/ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="button_up" from="ResultPopup/VideoPopupBackground/ResultImg/ResultLink" to="." method="_on_result_link_button_up"]
+[connection signal="button_up" from="ResultPopup/VideoPopupBackground/B_Rate" to="." method="_on_b_rate_button_up"]
+[connection signal="item_selected" from="ResultPopup/VideoPopupBackground/RatingList" to="." method="_on_rating_list_item_selected"]
+
+[editable path="SearchResult"]
+[editable path="SubjectPopup"]
+[editable path="PopupMenu"]
+[editable path="SubjectLevel"]
+[editable path="ResultPopup"]

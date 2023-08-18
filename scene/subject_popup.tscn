@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu3irca2cpe8p"]
+
+[sub_resource type="Gradient" id="Gradient_hlmwd"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.161623, 0.165727, 0.208766, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xtbtk"]
+gradient = SubResource("Gradient_hlmwd")
+
+[node name="SubjectPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubjectExit" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubjectPanel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.167
+anchor_top = 0.198
+anchor_right = 0.833
+anchor_bottom = 0.79
+offset_left = -0.384018
+offset_top = -0.304016
+offset_right = 0.383911
+offset_bottom = 0.0799866
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_xtbtk")
+
+[node name="Label" type="Label" parent="SubjectPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.167
+anchor_right = 0.667
+anchor_bottom = 0.333
+offset_left = 0.256012
+offset_top = -0.128006
+offset_right = -0.255981
+offset_bottom = 0.127998
+grow_horizontal = 2
+text = "Enter Subject"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubjectEntry" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.395
+anchor_right = 0.667
+anchor_bottom = 0.492
+offset_left = 0.384003
+offset_top = 0.0399933
+offset_right = -0.384033
+offset_bottom = 0.18399
+grow_horizontal = 2
+grow_vertical = 2
+text = "cpp"
+placeholder_text = "Subject"
+alignment = 1
+
+[node name="B_Next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444
+anchor_top = 0.593
+anchor_right = 0.556
+anchor_bottom = 0.654
+offset_left = 0.511963
+offset_top = -0.264038
+offset_right = -0.512085
+offset_bottom = 0.207977
+grow_horizontal = 2
+grow_vertical = 2
+text = "Next"

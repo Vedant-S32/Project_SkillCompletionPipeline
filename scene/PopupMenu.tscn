@@ -1,0 +1,151 @@
+[gd_scene load_steps=5 format=3 uid="uid://o7ncg7pgbx1q"]
+
+[ext_resource type="PackedScene" uid="uid://ct17ppj7yijv1" path="res://scene/search_result.tscn" id="1_xugm5"]
+
+[sub_resource type="Gradient" id="Gradient_5fkju"]
+offsets = PackedFloat32Array(0.278146)
+colors = PackedColorArray(0.155068, 0.1578, 0.204143, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5y3hg"]
+gradient = SubResource("Gradient_5fkju")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctv11"]
+font_size = 21
+
+[node name="PopupMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.007
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.064
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.167
+anchor_top = 0.204
+anchor_right = 0.833
+anchor_bottom = 0.796
+offset_left = -0.384018
+offset_top = -4.192
+offset_right = 0.383911
+offset_bottom = 0.191956
+texture = SubResource("GradientTexture1D_5y3hg")
+
+[node name="UploadLink" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.395
+anchor_right = 0.667
+anchor_bottom = 0.494
+offset_left = 0.384003
+offset_top = -0.960007
+offset_right = -0.384033
+offset_bottom = -0.112
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.296
+anchor_right = 0.667
+anchor_bottom = 0.394
+offset_left = 0.384003
+offset_top = 0.192001
+offset_right = -0.384033
+offset_bottom = -0.312012
+text = "Press Enter to commit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelContainer" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.167
+anchor_top = 0.198
+anchor_right = 0.833
+anchor_bottom = 0.796
+offset_left = -0.384018
+offset_top = -0.304016
+offset_right = 0.383911
+offset_bottom = 0.191956
+
+[node name="B_Advanced" type="Button" parent="LevelContainer"]
+layout_mode = 2
+anchor_left = 0.667
+anchor_top = 0.598
+anchor_right = 0.833
+anchor_bottom = 0.701
+offset_left = -0.256042
+offset_top = -0.0240173
+offset_right = 0.255981
+offset_bottom = 0.0119934
+grow_horizontal = 2
+grow_vertical = 2
+text = " Advanced "
+
+[node name="B_Beginner" type="Button" parent="LevelContainer"]
+layout_mode = 2
+anchor_left = 0.167
+anchor_top = 0.593
+anchor_right = 0.333
+anchor_bottom = 0.701
+offset_left = -0.256012
+offset_top = -0.0840149
+offset_right = 0.255997
+offset_bottom = 0.0119934
+grow_horizontal = 2
+grow_vertical = 2
+text = "Beginner"
+
+[node name="B_Intermediate" type="Button" parent="LevelContainer"]
+layout_mode = 2
+anchor_left = 0.421
+anchor_top = 0.593
+anchor_right = 0.583
+anchor_bottom = 0.701
+offset_left = -3.328
+offset_top = -0.0840149
+offset_right = 0.255981
+offset_bottom = 0.0119934
+grow_horizontal = 2
+grow_vertical = 2
+text = "Intermidiate "
+
+[node name="CommitPosition" parent="." instance=ExtResource("1_xugm5")]
+visible = false
+layout_mode = 1
+anchor_left = 0.035
+anchor_top = 0.198
+offset_left = -0.32
+offset_top = -0.304016
+
+[node name="CommitPositionList" type="ItemList" parent="CommitPosition"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CommitPosition"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.123
+anchor_right = 1.0
+offset_top = -0.0399971
+text = "Where the video should be commited?"
+label_settings = SubResource("LabelSettings_ctv11")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct17ppj7yijv1"]
+
+[ext_resource type="Script" path="res://script/API_YTFetch.gd" id="1_dmyq4"]
+
+[node name="SearchResult" type="Control"]
+layout_mode = 3
+anchor_left = 0.056
+anchor_top = 0.111
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.512001
+offset_top = -7.92801
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dmyq4")
+
+[node name="res_ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.993
+offset_bottom = 4.08801
+max_columns = 0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://t0k7pwxnla0o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ck8u"]
+font_size = 21
+
+[node name="SubjectLevel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="B2_ExitSubjectLevel" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.167
+anchor_top = 0.099
+anchor_right = 0.826
+anchor_bottom = 0.494
+offset_left = -0.384018
+offset_top = -0.152008
+offset_right = 8.44794
+offset_bottom = -0.112
+grow_horizontal = 2
+
+[node name="B2_Advanced" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.708
+anchor_top = 0.594
+anchor_right = 0.875
+anchor_bottom = 0.75
+offset_left = 0.255981
+offset_top = -0.0640106
+offset_right = -6.10352e-05
+offset_bottom = -1.52588e-05
+grow_horizontal = 2
+text = "Advanced"
+
+[node name="B2_Intermediate" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.417
+anchor_top = 0.594
+anchor_right = 0.583
+anchor_bottom = 0.75
+offset_left = -0.256012
+offset_top = -0.0640106
+offset_right = 0.255981
+offset_bottom = -1.52588e-05
+grow_horizontal = 2
+text = "Intermediate"
+
+[node name="B2_Beginner" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.594
+anchor_right = 0.292
+anchor_bottom = 0.75
+offset_top = -0.0640106
+offset_right = -0.256012
+offset_bottom = -1.52588e-05
+grow_horizontal = 2
+text = "Beginner"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.25
+anchor_right = 0.667
+anchor_bottom = 0.406
+offset_left = 0.255997
+offset_right = -0.256042
+offset_bottom = 0.0639954
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select Subject Level"
+label_settings = SubResource("LabelSettings_3ck8u")
+horizontal_alignment = 1
+vertical_alignment = 1
