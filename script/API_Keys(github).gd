@@ -1,5 +1,5 @@
 extends Node
-class_name C_APIKeys
+class_name C_APIKeys_github
 
 var U_CollectionName #FireStore Collection Name
 var U_YoutubeAPIKey #Youtube API Key

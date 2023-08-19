@@ -256,7 +256,7 @@ visible = false
 layout_mode = 1
 
 [node name="SubjectEntry" parent="SubjectPopup" index="2"]
-text = "blender"
+text = ""
 
 [node name="PopupMenu" parent="." instance=ExtResource("4_s86g1")]
 visible = false
@@ -276,8 +276,8 @@ layout_mode = 1
 [connection signal="item_selected" from="SearchResult/res_ItemList" to="." method="_on_res_item_list_item_selected"]
 [connection signal="text_submitted" from="Panel/SearchBox" to="." method="_on_search_box_text_submitted"]
 [connection signal="button_up" from="Panel/SearchButton" to="." method="_on_search_button_button_up"]
-[connection signal="button_up" from="Panel/RefreshButton" to="." method="_on_home_button_button_up"]
 [connection signal="button_up" from="Panel/RefreshButton" to="." method="_on_refresh_button_button_up"]
+[connection signal="button_up" from="Panel/RefreshButton" to="." method="_on_home_button_button_up"]
 [connection signal="button_up" from="Panel/HomeButton" to="." method="_on_home_button_button_up"]
 [connection signal="pressed" from="Button_SideMenu" to="." method="_on_button_side_menu_pressed"]
 [connection signal="pressed" from="Swt_Addlink" to="." method="_on_swt_addlink_pressed"]

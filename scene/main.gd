@@ -25,10 +25,6 @@ var I_APIKeys = C_APIKeys.new()
 @onready var U_CommitPositionList = $PopupMenu/CommitPosition/CommitPositionList
 @onready var U_FirestoreCollection : FirestoreCollection = Firebase.Firestore.collection(I_APIKeys.U_CollectionName)
 var im = Image.load_from_file("res://icon.svg")
-#var DIR = OS.get_executable_path().get_base_dir()
-#var PY_Interpreter = DIR.plus_file("venv/bin/")
-#var PY_Interpreter = ProjectSettings.globalize_path("res://venv/bin/python3.9")
-#var PY_Script = ProjectSettings.globalize_path("res://script/test.py")
 var query: FirestoreQuery = FirestoreQuery.new()
 var Img = ImageTexture.create_from_image(im)
 var U_GlobalIndex
