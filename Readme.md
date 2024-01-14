@@ -7,6 +7,7 @@ Welcome to the Project Skill Completion Pipeline repository! Hi, this is my firs
 - [Introduction](#introduction)
 - [Features](#features)
 - [Getting Started](#getting-started)
+- [In Action](#in-action)
 - [Technologies Used](#technologies-used)
 - [Developer Comment](#developer-comment)
 - [License](#license)
