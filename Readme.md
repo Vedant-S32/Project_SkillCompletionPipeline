@@ -8,8 +8,6 @@ Welcome to the Project Skill Completion Pipeline repository! Hi, this is my firs
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Technologies Used](#technologies-used)
-- [Contribution](#contribution)
-- [Unfinsihed Features](#unfinsihed-features)
 - [Developer Comment](#developer-comment)
 - [License](#license)
 
@@ -25,10 +23,6 @@ The Skill Completion Pipeline is designed to provide a seamless learning experie
 
 - **By the User for the User:** Users can help build the repositary for commiting urls and rating the videos.
 
-- **Community Interaction:** Engage with a community of learners, share experiences, and collaborate on projects related to the skills you are acquiring(yet to be implemented).
-
-- **Personalized Recommendations:** Benefit from personalized course recommendations based on your progress and interests, enhancing your learning journey(yet to be implemented).
-
 ## Getting Started
 
 To get started with the Skill Completion Pipeline:
@@ -38,8 +32,6 @@ To get started with the Skill Completion Pipeline:
 3. In scripts folder open "C_APIKeys(github).gd" rename it to "C_APIKeys.gd" and enter your keys.
 4. Use this template for document in FireStore collection. ![Screenshot (559)](https://github.com/VedantS-32/Project_SkillCompletionPipeline/assets/122535961/f7be7f40-7a86-4786-961f-2fbe96c9c605)
 
-For a more detailed guide on installation and usage, please refer to the [Getting Started Guide](getting-started-guide.md).
-
 ## Technologies Used
 
 - **Godot Game Engine:** The core engine behind the application, providing a cross-platform interface and user interaction.
@@ -47,23 +39,6 @@ For a more detailed guide on installation and usage, please refer to the [Gettin
 - **Google Firestore:** The cloud-based storage system used for managing the repository of learning resources and user data.
 
 - **Google YouTube API:** Integration with the YouTube API allows seamless display of video titles and thumbnails.
-
-## Contribution
-
-We welcome contributions from the open-source community to improve and expand the Skill Completion Pipeline. To contribute:
-
-1. Fork the repository and create your branch.
-2. Make necessary changes and improvements.
-3. Submit a pull request, detailing the changes you've made.
-
-## Unfinished Features
-
-- Expansion of the resource repository to cover a wider range of skills and domains.
-- Integration of machine learning algorithms for more accurate personalized recommendations.
-- Integration of ChatGPT for making base repository that aren't contributed by users yet.
-- Impletation of personal pipeline for the user like personal playlist.
-- Impletation of comment system.
-- Development of mobile applications to extend access to learners on various platforms.
 
 ## Developer Comment
 
